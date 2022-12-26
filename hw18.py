@@ -81,61 +81,81 @@ from math import floor
 # Пример:
 # - [1.1, 1.2, 3.1, 5, 10.01] => 0.19 #тут я так понимаю .0 не самое маленькое
 
-def checking_number (num_for_check):
-    while num_for_check.isdigit()==False:
-        print ("it's not possitive and integer number, pls try again: ")
-        num_for_check = input("Input possitive and integer number which is quantity of elements in your list: ")
-    else:
-        return int(num_for_check)
+# def checking_number (num_for_check):
+#     while num_for_check.isdigit()==False:
+#         print ("it's not possitive and integer number, pls try again: ")
+#         num_for_check = input("Input possitive and integer number which is quantity of elements in your list: ")
+#     else:
+#         return int(num_for_check)
 
-def create_randfloat_list(num_of_el): 
-    rand_list=[]
-    if num_of_el == 0:
-        print ("You made empty list, my congratulations, weirdo")
-    else:
-        for i in range(num_of_el):
-            rand_list.append(random.uniform(1,11))
-        return rand_list
+# def create_randfloat_list(num_of_el): 
+#     rand_list=[]
+#     if num_of_el == 0:
+#         print ("You made empty list, my congratulations, weirdo")
+#     else:
+#         for i in range(num_of_el):
+#             rand_list.append(random.uniform(1,11))
+#         return rand_list
 
-def float_list_to_int (floattoint_list):
-    new_int_list = [floor(floattoint_list) for floattoint_list in floattoint_list]
-    return new_int_list
+# def float_list_to_int (floattoint_list):
+#     new_int_list = [floor(floattoint_list) for floattoint_list in floattoint_list]
+#     return new_int_list
 
-def find_max (where_we_search):
-    max_num = where_we_search[0]
+# def find_max (where_we_search):
+#     max_num = where_we_search[0]
 
-    for el in range(len(where_we_search)):
-        if where_we_search[el] != 0:
-            if max_num < where_we_search[el]:
-                max_num = where_we_search[el]
-        else:
-            None
-    return max_num
+#     for el in range(len(where_we_search)):
+#         if where_we_search[el] != 0:
+#             if max_num < where_we_search[el]:
+#                 max_num = where_we_search[el]
+#         else:
+#             None
+#     return max_num
 
-def find_min (where_we_search):
-    min_num = where_we_search[0]
+# def find_min (where_we_search):
+#     min_num = where_we_search[0]
 
-    for el in range(len(where_we_search)):
-        if where_we_search[el] != 0:
-            if min_num > where_we_search[el]:
-                min_num = where_we_search[el]
-        else:
-            None
-    return min_num
+#     for el in range(len(where_we_search)):
+#         if where_we_search[el] != 0:
+#             if min_num > where_we_search[el]:
+#                 min_num = where_we_search[el]
+#         else:
+#             None
+#     return min_num
 
-user_input = checking_number(
-            input('Input possitive and integer number which\
-is quantity of elements in your list: '))
+# user_input = checking_number(
+#             input('Input possitive and integer number which\
+# is quantity of elements in your list: '))
 
-ran_float_list = create_randfloat_list(user_input)
-ran_int_list = float_list_to_int(ran_float_list)
-new_list = []
-for i in range(len(ran_float_list)):
-    new_list.append(round(ran_float_list[i] - ran_int_list[i],4))
+# ran_float_list = create_randfloat_list(user_input)
+# ran_int_list = float_list_to_int(ran_float_list)
+# new_list = []
+# for i in range(len(ran_float_list)):
+#     new_list.append(round(ran_float_list[i] - ran_int_list[i],4))
 
-print (f'The difference between min and max float number in {new_list}\
-is {round(find_max(new_list) - find_min(new_list),4)}')
+# print (f'The difference between min and max float number in {new_list}\
+# is {round(find_max(new_list) - find_min(new_list),4)}')
 
+#Задача 4. 
+# Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+# Пример:
+# - 45 -> 101101
+# - 3 -> 11
+# - 2 -> 10
 
+# решение номер 1:
+# num = (int(input("Input int pls: ")))
+# print(f" you binary for {num} is {45:b}") 
 
+#решение номер 2(многострадальное :) и без проверок -__- ):
+def number_to_binary (num_to_bin):
+    binary_list=[]
+    while (num_to_bin>0):
+        o_l=int(float(num_to_bin%2))
+        binary_list.append(o_l)
+        num_to_bin=(num_to_bin-o_l)/2
+    return binary_list
 
+user_input=int(input(f'Please input positive integer number, \n{5*"please "}: '))
+print (f'Your input number was {user_input} and now it\'s in binary:')
+print (*number_to_binary (user_input))
