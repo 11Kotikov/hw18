@@ -148,14 +148,55 @@ from math import floor
 # print(f" you binary for {num} is {45:b}") 
 
 #решение номер 2(многострадальное :) и без проверок -__- ):
-def number_to_binary (num_to_bin):
-    binary_list=[]
-    while (num_to_bin>0):
-        o_l=int(float(num_to_bin%2))
-        binary_list.append(o_l)
-        num_to_bin=(num_to_bin-o_l)/2
-    return binary_list
+# def number_to_binary (num_to_bin):
+#     binary_list=[]
+#     while (num_to_bin>0):
+#         o_l=int(float(num_to_bin%2))
+#         binary_list.append(o_l)
+#         num_to_bin=(num_to_bin-o_l)/2
+#     return binary_list
 
-user_input=int(input(f'Please input positive integer number, \n{5*"please "}: '))
-print (f'Your input number was {user_input} and now it\'s in binary:')
-print (*number_to_binary (user_input))
+# user_input=int(input(f'Please input positive integer number, \n{5*"please "}: '))
+# print (f'Your input number was {user_input} and now it\'s in binary:')
+# print (*number_to_binary (user_input),sep='')
+
+#Задача 5 Задайте число. Составьте список чисел Фибоначчи, 
+# в том числе для отрицательных индексов.
+# Пример:
+# - для k = 8 список будет выглядеть так:
+#  [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21] [Негафибоначчи]
+
+# def checking_number (num_for_check):
+#     while num_for_check.isdigit()==False:
+#         print ("it's not possitive and integer number, pls try again: ")
+#         num_for_check = input("Input possitive and integer number which is quantity of elements in your list: ")
+#     else:
+#         return int(num_for_check)
+
+# def fibonacci (n):
+#     leonardus = [i for i in range(0, 2)]
+#     i = 2
+#     while i < n+1:
+#         leonardus.append (leonardus[i-1] + leonardus[i-2])
+#         i+=1
+#     return leonardus
+
+# def negabonacci_from_fibonacci(pisanus):
+#     denial = []
+#     for i in range(0,len(pisanus)):
+#         if i%2==0:
+#             denial.append(pisanus[i]*-1)
+#         else:
+#             denial.append(pisanus[i])
+#     return denial
+
+# user_input = checking_number(
+#             input('Input possitive and integer number to\
+# create the fibonacci sequence: '))
+# fib_n = fibonacci(user_input)
+# nega_fib_n = negabonacci_from_fibonacci(fib_n)
+# print(f'For {user_input} F(n) will be {fib_n}\
+#  and negafibonacci is: {nega_fib_n}')
+# nega_fib_n.pop(0)
+# all_together_fibs = nega_fib_n [::-1] + fib_n
+# print (f'And all together in one list!: {all_together_fibs}')
