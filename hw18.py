@@ -29,7 +29,7 @@ from math import floor
 
 # user_input = checking_number(
 #             input('Input possitive and integer number\
-# which is quantity of elements in your list: '))
+#  which is quantity of elements in your list: '))
 # new_list = create_rand_list(user_input)
 # print (f'it\'s your new list:\n{new_list}')
 # print(f'Sum of elements in odd indexes is "{sum_of_the_odd_elements(new_list)}"')
@@ -40,40 +40,40 @@ from math import floor
 #     [2, 3, 4, 5, 6] => [12, 15, 16];
 #     [2, 3, 5, 6] => [12, 15]
 
-# def checking_number (num_for_check):
-#     while num_for_check.isdigit()==False:
-#         print ("it's not possitive and integer number, pls try again: ")
-#         num_for_check = input("Input possitive and integer number\
-#  which is quantity of elements in your list: ")
-#     else:
-#         return int(num_for_check)
+def checking_number (num_for_check):
+    while num_for_check.isdigit()==False or num_for_check[0]=='0':
+        print ("it's not possitive and integer number, pls try again: ")
+        num_for_check = input("Input possitive and integer number>0\
+ which is quantity of elements in your list: ")
+    else:
+        return int(num_for_check)
 
-# def create_rand_list(num_of_el): 
-#     rand_list=[]
-#     if num_of_el == 0:
-#         print ("You made empty list, my congratulations, weirdo")
-#     else:
-#         for i in range(num_of_el):
-#             rand_list.append(random.randint(2,5))
-#         return rand_list
+def create_rand_list(num_of_el): 
+    rand_list=[]
+    if num_of_el == 0:
+        print ("You made empty list, my congratulations, weirdo")
+    else:
+        for i in range(num_of_el):
+            rand_list.append(random.randint(2,5))
+        return rand_list
 
-# def multiply_list_pairs (list_to_rev):
-#     my_copy_list = list(reversed(list_to_rev))
-#     multi_list = []
-#     if len(list_to_rev)%2==0:
-#         for i in range(int(len (list_to_rev)/2)):
-#             multi_list.append(list_to_rev[i] * my_copy_list[i])
-#     else:
-#         for i in range(int((len (list_to_rev)/2)+1)):
-#                 multi_list.append(list_to_rev[i] * my_copy_list[i])
-#     return multi_list
+def multiply_list_pairs (list_to_rev):
+    my_copy_list = list(reversed(list_to_rev))
+    multi_list = []
+    if len(list_to_rev)%2==0:
+        for i in range(int(len (list_to_rev)/2)):
+            multi_list.append(list_to_rev[i] * my_copy_list[i])
+    else:
+        for i in range(int((len (list_to_rev)/2)+1)):
+                multi_list.append(list_to_rev[i] * my_copy_list[i])
+    return multi_list
 
-# user_input = checking_number(
-#             input('Input possitive and integer number\
-# which is quantity of elements in your list: '))
-# new_list = create_rand_list(user_input)
-# print (f'it\'s your new list:\n{new_list}')
-# print (f'that is your\'s multiplied list{multiply_list_pairs(new_list)}')
+user_input = checking_number(
+            input('Input possitive and integer number>0\
+ which is quantity of elements in your list: '))
+new_list = create_rand_list(user_input)
+print (f'it\'s your new list:\n{new_list}')
+print (f'that is your\'s multiplied list{multiply_list_pairs(new_list)}')
 
 # Задача 3. Задайте список из вещественных чисел. Напишите программу, 
 # которая найдёт разницу между максимальным и минимальным значением 
@@ -169,41 +169,41 @@ from math import floor
 # - для k = 8 список будет выглядеть так:
 #  [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21] [Негафибоначчи]
 
-def checking_number (num_for_check):
-    while num_for_check.isdigit()==False:
-        print ("it's not possitive and integer number, pls try again: ")
-        num_for_check = input("Input possitive and integer number which is quantity of elements in your list: ")
-    else:
-        return int(num_for_check)
+# def checking_number (num_for_check):
+#     while num_for_check.isdigit()==False:
+#         print ("it's not possitive and integer number, pls try again: ")
+#         num_for_check = input("Input possitive and integer number which is quantity of elements in your list: ")
+#     else:
+#         return int(num_for_check)
 
-def fibonacci (n):
-    if n == 0:
-        leonardus=["0"]
-        return leonardus
-    else:
-        leonardus = [i for i in range(0, 2)]
-        i = 2
-        while i < n+1:
-            leonardus.append (leonardus[i-1] + leonardus[i-2])
-            i+=1
-        return leonardus
+# def fibonacci (n):
+#     if n == 0:
+#         leonardus=["0"]
+#         return leonardus
+#     else:
+#         leonardus = [i for i in range(0, 2)]
+#         i = 2
+#         while i < n+1:
+#             leonardus.append (leonardus[i-1] + leonardus[i-2])
+#             i+=1
+#         return leonardus
 
-def negabonacci_from_fibonacci(pisanus):
-    denial = []
-    for i in range(0,len(pisanus)):
-        if i%2==0:
-            denial.append(pisanus[i]*-1)
-        else:
-            denial.append(pisanus[i])
-    return denial
+# def negabonacci_from_fibonacci(pisanus):
+#     denial = []
+#     for i in range(0,len(pisanus)):
+#         if i%2==0:
+#             denial.append(pisanus[i]*-1)
+#         else:
+#             denial.append(pisanus[i])
+#     return denial
 
-user_input = checking_number(
-            input('Input possitive and integer number to\
- create the fibonacci sequence: '))
-fib_n = fibonacci(user_input)
-nega_fib_n = negabonacci_from_fibonacci(fib_n)
-print(f'For {user_input} F(n) will be {fib_n}\
- and negafibonacci is: {nega_fib_n}')
-nega_fib_n.pop(0)
-all_together_fibs = nega_fib_n [::-1] + fib_n
-print (f'And all together in one list!: {all_together_fibs}')
+# user_input = checking_number(
+#             input('Input possitive and integer number to\
+#  create the fibonacci sequence: '))
+# fib_n = fibonacci(user_input)
+# nega_fib_n = negabonacci_from_fibonacci(fib_n)
+# print(f'For {user_input} F(n) will be {fib_n}\
+#  and negafibonacci is: {nega_fib_n}')
+# nega_fib_n.pop(0)
+# all_together_fibs = nega_fib_n [::-1] + fib_n
+# print (f'And all together in one list!: {all_together_fibs}')
