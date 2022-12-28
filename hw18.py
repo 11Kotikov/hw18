@@ -40,40 +40,40 @@ from math import floor
 #     [2, 3, 4, 5, 6] => [12, 15, 16];
 #     [2, 3, 5, 6] => [12, 15]
 
-def checking_number (num_for_check):
-    while num_for_check.isdigit()==False or num_for_check[0]=='0':
-        print ("it's not possitive and integer number, pls try again: ")
-        num_for_check = input("Input possitive and integer number>0\
- which is quantity of elements in your list: ")
-    else:
-        return int(num_for_check)
+# def checking_number (num_for_check):
+#     while num_for_check.isdigit()==False or num_for_check[0]=='0':
+#         print ("it's not possitive and integer number, pls try again: ")
+#         num_for_check = input("Input possitive and integer number>0\
+#  which is quantity of elements in your list: ")
+#     else:
+#         return int(num_for_check)
 
-def create_rand_list(num_of_el): 
-    rand_list=[]
-    if num_of_el == 0:
-        print ("You made empty list, my congratulations, weirdo")
-    else:
-        for i in range(num_of_el):
-            rand_list.append(random.randint(2,5))
-        return rand_list
+# def create_rand_list(num_of_el): 
+#     rand_list=[]
+#     if num_of_el == 0:
+#         print ("You made empty list, my congratulations, weirdo")
+#     else:
+#         for i in range(num_of_el):
+#             rand_list.append(random.randint(2,5))
+#         return rand_list
 
-def multiply_list_pairs (list_to_rev):
-    my_copy_list = list(reversed(list_to_rev))
-    multi_list = []
-    if len(list_to_rev)%2==0:
-        for i in range(int(len (list_to_rev)/2)):
-            multi_list.append(list_to_rev[i] * my_copy_list[i])
-    else:
-        for i in range(int((len (list_to_rev)/2)+1)):
-                multi_list.append(list_to_rev[i] * my_copy_list[i])
-    return multi_list
+# def multiply_list_pairs (list_to_rev):
+#     my_copy_list = list(reversed(list_to_rev))
+#     multi_list = []
+#     if len(list_to_rev)%2==0:
+#         for i in range(int(len (list_to_rev)/2)):
+#             multi_list.append(list_to_rev[i] * my_copy_list[i])
+#     else:
+#         for i in range(int((len (list_to_rev)/2)+1)):
+#                 multi_list.append(list_to_rev[i] * my_copy_list[i])
+#     return multi_list
 
-user_input = checking_number(
-            input('Input possitive and integer number>0\
- which is quantity of elements in your list: '))
-new_list = create_rand_list(user_input)
-print (f'it\'s your new list:\n{new_list}')
-print (f'that is your\'s multiplied list{multiply_list_pairs(new_list)}')
+# user_input = checking_number(
+#             input('Input possitive and integer number>0\
+#  which is quantity of elements in your list: '))
+# new_list = create_rand_list(user_input)
+# print (f'it\'s your new list:\n{new_list}')
+# print (f'that is your\'s multiplied list{multiply_list_pairs(new_list)}')
 
 # Задача 3. Задайте список из вещественных чисел. Напишите программу, 
 # которая найдёт разницу между максимальным и минимальным значением 
@@ -145,23 +145,23 @@ print (f'that is your\'s multiplied list{multiply_list_pairs(new_list)}')
 
 # решение номер 1:
 # num = (int(input("Input int pls: ")))
-# print(f" you binary for {num} is {45:b}") 
+# print(f"your binary for {num} is {45:b}") 
 
 #решение номер 2(многострадальное :) и без проверок -__- ):
-# def number_to_binary (num_to_bin):
-#     if num_to_bin == 0:
-#         return "0"
-#     else:
-#         binary_list=[]
-#         while (num_to_bin>0):
-#             o_l=int(float(num_to_bin%2))
-#             binary_list.append(o_l)
-#             num_to_bin=(num_to_bin-o_l)/2
-#         return binary_list
+def number_to_binary (num_to_bin):
+    if num_to_bin == 0:
+        return "0"
+    else:
+        binary_list=[]
+        while (num_to_bin>0):
+            o_l=int(num_to_bin%2)
+            binary_list.append(o_l)
+            num_to_bin=(num_to_bin-o_l)/2
+        return binary_list
 
-# user_input=int(input(f'Please input positive integer number, \n{5*"please "}: '))
-# print (f'Your input number was {user_input} and now it\'s in binary:')
-# print (*number_to_binary (user_input),sep='')
+user_input=int(input(f'Please input positive integer number, \n{5*"please "}: '))
+print (f'Your input number was {user_input} and now it\'s in binary:')
+print (*number_to_binary (user_input),sep='')
 
 #Задача 5 Задайте число. Составьте список чисел Фибоначчи, 
 # в том числе для отрицательных индексов.
