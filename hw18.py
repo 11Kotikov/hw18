@@ -44,7 +44,7 @@ from math import floor
 #     while num_for_check.isdigit()==False:
 #         print ("it's not possitive and integer number, pls try again: ")
 #         num_for_check = input("Input possitive and integer number\
-# which is quantity of elements in your list: ")
+#  which is quantity of elements in your list: ")
 #     else:
 #         return int(num_for_check)
 
@@ -125,7 +125,7 @@ from math import floor
 
 # user_input = checking_number(
 #             input('Input possitive and integer number which\
-# is quantity of elements in your list: '))
+#  is quantity of elements in your list: '))
 
 # ran_float_list = create_randfloat_list(user_input)
 # ran_int_list = float_list_to_int(ran_float_list)
@@ -134,7 +134,7 @@ from math import floor
 #     new_list.append(round(ran_float_list[i] - ran_int_list[i],4))
 
 # print (f'The difference between min and max float number in {new_list}\
-# is {round(find_max(new_list) - find_min(new_list),4)}')
+#  is {round(find_max(new_list) - find_min(new_list),4)}')
 
 #Задача 4. 
 # Напишите программу, которая будет преобразовывать десятичное число в двоичное.
@@ -148,17 +148,20 @@ from math import floor
 # print(f" you binary for {num} is {45:b}") 
 
 #решение номер 2(многострадальное :) и без проверок -__- ):
-# def number_to_binary (num_to_bin):
-#     binary_list=[]
-#     while (num_to_bin>0):
-#         o_l=int(float(num_to_bin%2))
-#         binary_list.append(o_l)
-#         num_to_bin=(num_to_bin-o_l)/2
-#     return binary_list
+def number_to_binary (num_to_bin):
+    if num_to_bin == 0:
+        return "0"
+    else:
+        binary_list=[]
+        while (num_to_bin>0):
+            o_l=int(float(num_to_bin%2))
+            binary_list.append(o_l)
+            num_to_bin=(num_to_bin-o_l)/2
+        return binary_list
 
-# user_input=int(input(f'Please input positive integer number, \n{5*"please "}: '))
-# print (f'Your input number was {user_input} and now it\'s in binary:')
-# print (*number_to_binary (user_input),sep='')
+user_input=int(input(f'Please input positive integer number, \n{5*"please "}: '))
+print (f'Your input number was {user_input} and now it\'s in binary:')
+print (*number_to_binary (user_input),sep='')
 
 #Задача 5 Задайте число. Составьте список чисел Фибоначчи, 
 # в том числе для отрицательных индексов.
